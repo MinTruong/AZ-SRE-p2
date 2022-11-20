@@ -7,6 +7,7 @@ locals {
      Name      = local.name
      Terraform = "true"
    }
+   namespace = "monitoring"
  }
 
 #  module "vpc" {
