@@ -181,7 +181,7 @@ Login to Grafana with `admin` for the username and `prom-operator` for the passw
         - `terraform init`
         - `terraform apply`
     3. Please take a screenshot of a successful Terraform run and include that as part of your submission for the project.
-        -  Terraform apply successful: ![default ns](/evidence/zone1/terraform_apply_success.png)
+        -  Terraform apply successful: ![default ns](/evidence/zone1/deployment-zone1.png)
         -  3 Instances and 2 nodes: ![default ns](/evidence/zone1/instance_zone1.png.png)
         -  EKS with 2 nodes: ![default ns](/evidence/zone1/eks-zone1.png)
         -  RDS image: ![default ns](/evidence/zone1/rds-zone1.png)
@@ -206,11 +206,11 @@ Login to Grafana with `admin` for the username and `prom-operator` for the passw
     - `cd` into your `zone2` folder
     - `terraform init`
     - `terraform apply`
-    1. Please take a screenshot of a successful Terraform run and include that as part of your submission for the project.
+    3. Please take a screenshot of a successful Terraform run and include that as part of your submission for the project.
         - Terraform apply successful: ![default ns](/evidence/zone1/deployment-zone1.png)
         - EKS with 2 nodes: ![default ns](/evidence/zone2/eks_zone2.png)
-        - 3 Instances and 2 nodes: ![default ns](/evidence/zone2/instance_zone2.png)
-        - ALB image: ![default ns](/evidence/zone2/lb-zone2.png)
+        - Instances and nodes: ![default ns](/evidence/zone2/instance_zone2.png)
+        - ALB image: ![default ns](/evidence/zone1/lb-zone1.png)
 
 6. Implement basic SQL replication and establish backups
     **NOTE:** The RDS configuration is completed under the `zone1` folder. Due to the way it was implemented in Terraform BOTH region RDS instances are completed under the same Terraform project.
@@ -229,6 +229,7 @@ Login to Grafana with `admin` for the username and `prom-operator` for the passw
 7. Destroy it all. Zone1 first, then zone2 using `terraform destroy`
     1. Please take a screenshot of the final output from Terraform showing the destroyed resources
          - Destroy zone 1 success: ![default ns](/evidence/zone1/destroy_zone1.png)
+         - Destroy zone 2 success: ![default ns](/evidence/zone2/destroy_zone2.png)
          - Because I follow destroy zone1 first, so some case using terraform_remote_state cannot find in zone2 when I delete, so I deleted manually. so cannot screenshot here
 
 **NOTE:** 
