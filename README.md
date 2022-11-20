@@ -161,11 +161,11 @@ Login to Grafana with `admin` for the username and `prom-operator` for the passw
         - **NOTE**: You will not see the goal SLO numbers in your dashboard and that is fine. The application doesn't have enough traffic or time to generate a 99% availabiliy or have an error budget that works.
     3. Please submit your Prometheus queries you use for you dashboards in the `prometheus_queries.md` file [linked here](prometheus_queries.md).
     4. Please take a screenshot of your created dashboard and include that as part of your submission for the project.
-         - Availability SLI: ![default ns](/screenshot/dashboard-promql/Availability_SLI.png)
-         - Latency SLI: ![default ns](/screenshot/dashboard-promql/Latency_SLI.png)
-         - Throughput: ![default ns](/screenshot/dashboard-promql/Throughput.png)
-         - Error Budget: ![default ns](/screenshot/dashboard-promql/error_budget.png)
-         - Dashboard: ![default ns](/screenshot/dashboard-promql/dashboard_project_2.png)
+         - Availability SLI: ![default ns](/evidence/dashboard-promql/Availability_SLI.png)
+         - Latency SLI: ![default ns](/evidence/dashboard/ALatency-SLI.png)
+         - Throughput: ![default ns](/evidence/dashboard/Throughput.png)
+         - Error Budget: ![default ns](/evidence/dashboard/Error-Budget.png)
+         - Dashboard: ![default ns](/evidence/dashboard/Dashboard-SLIs-SLOs.png)
 
 4. Deploy the infrastructure to zone1
     1. You will need to make sure the infrastructure is highly available. Please see the `requirements.md` document [here](requirements.md) for details on the requirements for making the infrastructure HA. You will modify your code to meet those requirements.
@@ -181,11 +181,11 @@ Login to Grafana with `admin` for the username and `prom-operator` for the passw
         - `terraform init`
         - `terraform apply`
     3. Please take a screenshot of a successful Terraform run and include that as part of your submission for the project.
-        -  Terraform apply successful: ![default ns](/screenshot/zone1/terraform_apply_success.png)
-        -  3 Instances and 2 nodes: ![default ns](/screenshot/zone1/2_nodes_3_Instance.png)
-        -  EKS with 2 nodes: ![default ns](/screenshot/zone1/eks_2_node.png)
-        -  RDS image: ![default ns](/screenshot/zone1/rds.png)
-        -  ALB image: ![default ns](/screenshot/zone1/ALB_and_NLB_grafana.png)
+        -  Terraform apply successful: ![default ns](/evidence/zone1/terraform_apply_success.png)
+        -  3 Instances and 2 nodes: ![default ns](/evidence/zone1/instance_zone1.png.png)
+        -  EKS with 2 nodes: ![default ns](/evidence/zone1/eks-zone1.png)
+        -  RDS image: ![default ns](/evidence/zone1/rds-zone1.png)
+        -  ALB image: ![default ns](/evidence/zone1/lb-zone1.png)
 
 5. Deploy the infrastructure to zone2 (DR)
     1. You will need to make sure the infrastructure is highly available. Please see the `requirements.md` document [here](requirements.md) for details on the requirements for making the infrastructure HA. You will modify your code to meet those requirements.
@@ -207,10 +207,10 @@ Login to Grafana with `admin` for the username and `prom-operator` for the passw
     - `terraform init`
     - `terraform apply`
     1. Please take a screenshot of a successful Terraform run and include that as part of your submission for the project.
-        - Terraform apply successful: ![default ns](/screenshot/zone1/terraform_apply_success.png)
-        - EKS with 2 nodes: ![default ns](/screenshot/zone2/eks_cluster.png)
-        - 3 Instances and 2 nodes: ![default ns](/screenshot/zone2/3_instance_2_node.png)
-        - ALB image: ![default ns](/screenshot/zone2/alb_nlb.png)
+        - Terraform apply successful: ![default ns](/evidence/zone1/deployment-zone1.png)
+        - EKS with 2 nodes: ![default ns](/evidence/zone2/eks_zone2.png)
+        - 3 Instances and 2 nodes: ![default ns](/evidence/zone2/instance_zone2.png)
+        - ALB image: ![default ns](/evidence/zone2/lb-zone2.png)
 
 6. Implement basic SQL replication and establish backups
     **NOTE:** The RDS configuration is completed under the `zone1` folder. Due to the way it was implemented in Terraform BOTH region RDS instances are completed under the same Terraform project.
@@ -221,14 +221,14 @@ Login to Grafana with `admin` for the username and `prom-operator` for the passw
         - You will need to add multiple availability zones for the RDS module. The starter code only contains 1 zone for each RDS instance in each region.
     2. The code for the `rds-s` cluster is commented out in the `rds.tf` file under the `zone-1` folder. You will need to fix the `rds-s` module and then uncomment this code for it to work
     3. Please take a screenshot of a successful Terraform run and include that as part of your submission for the project.
-         - RDS deploy in 3 az: ![default ns](/screenshot/rds-az/rds-3-az.png)
-         - Retention windows to 5 days: ![default ns](/screenshot/rds-az/retention-windows.png)
-         - RDS in zone2: ![default ns](/screenshot/rds-az/rds.png) 
+         - RDS deploy in 3 az: ![default ns](/evidence/rds/rds-zone1.png)
+         - Retention windows to 5 days: ![default ns](/evidence/zone1/rds_backup_zone1.png)
+         - RDS in zone2: ![default ns](/evidence/zone2/rds_zone2.png 
          - Note: I've just modify code but I forgot screenshot here for RDS in zone2
 
 7. Destroy it all. Zone1 first, then zone2 using `terraform destroy`
     1. Please take a screenshot of the final output from Terraform showing the destroyed resources
-         - Destroy zone 1 success: ![default ns](/screenshot/zone1/destroy_complete.png)
+         - Destroy zone 1 success: ![default ns](/evidence/zone1/destroy_zone1.png)
          - Because I follow destroy zone1 first, so some case using terraform_remote_state cannot find in zone2 when I delete, so I deleted manually. so cannot screenshot here
 
 **NOTE:** 
