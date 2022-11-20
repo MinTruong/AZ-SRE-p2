@@ -85,7 +85,7 @@ Clone the appropriate git repo with the starter code. There will be 2 folders. Z
    - `aws eks --region us-east-2 update-kubeconfig --name udacity-cluster`
    - Change kubernetes context to the new AWS cluster
      - `kubectl config use-context <cluster_name>`
-       - e.g ` arn:aws:eks:us-east-2:139802095464:cluster/udacity-cluster`
+       - e.g ` arn:aws:eks:us-east-2:685574950167:cluster/udacity-cluster`
    - Confirm with: `kubectl get pods --all-namespaces`
    - Then run `kubectl create namespace monitoring`
    <!-- - Change context to `udacity` namespace
