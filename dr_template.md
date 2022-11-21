@@ -2,14 +2,14 @@
 
 ## AWS Zones
 - Zone 1 (Region: us-east-2): us-east-2a, us-east-2b, us-east-2c
-- Zone 2 (Region: us-west-2): us-west-1a, us-west-1c
+- Zone 2 (Region: us-west-1): us-west-1a, us-west-1c
 ## Servers and Clusters
 
 ### Table 1.1 Summary
 | Asset        | Purpose                                                                                                               | Size                                                                   | Qty                                                             | DR                                                                                                           |
 |--------------|-----------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|-----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
 | Asset name   | Brief description                                                                                                     | AWS size eg. t3.micro (if applicable, not all assets will have a size) | Number of nodes/replicas or just how many of a particular asset | Identify if this asset is deployed to DR, replicated, created in multiple locations or just stored elsewhere |
-| EC2 instance | enables you to scale up or down to handle changes in requirements                                                     | t3.micro                                                               | 3                                                               | it is specified in both east and west lcations to implement DR                                               |
+| EC2 instance | enables you to scale up or down to handle changes in requirements                                                     | t3.micro                                                               | 3 with us-east-2 and 2 with us-west-1                                                         | it is specified in both east and west lcations to implement DR                                               |
 | RDS          | provides a selection of instance types optimized to fit different relational database use cases                       | db.t2.small                                                            | 2(reader and writer instance perzone)                           | rds primary and rds secondary will be DR                                                                     |
 | EKS cluster  | to run Kubernetes on AWS without needing to install, operate, and maintain your own Kubernetes control plane or nodes | 2 nodes                                                                | 1                                                               | In bot us-east and us-west-1                                                                                 |
 | EKS nodes    |  Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are managed by AWS for an Amazon EKS cluster  | t3.meduim                                                              | 2 nodes per cluster                                             | In both the regions                                                                                          |
