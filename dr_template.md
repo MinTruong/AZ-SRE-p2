@@ -16,7 +16,7 @@
 | VPC          | enables you to launch AWS resources into a virtual network that you've defined                                        | CIDR range                                                             | multiple vpc across azs                                         | If one vpc craashes so that traffic changes to other ones                                                    |
 | ALBs         | route and load balance gRPC traffic between microservices or between gRPC enabled clients and services                | no particular size                                                     | 1(grafana)                                                      | in both us-east-1 and west-1 regions
 
-|RDS cluster    |    DB cluster consists of one or more DB instances and a cluster volume that manages the data for those DB instances     |          no particular size    | 1          | in both us-east-1 and west-1 regions
+| RDS cluster    | DB cluster consists of one or more DB instances and a cluster volume that manages the data for those DB instances     | no particular size    | 1          | in both us-east-1 and west-1 regions
 
 
 ### Descriptions
